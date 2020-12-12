@@ -1,0 +1,102 @@
+{
+   "families":[
+      {
+         "key":"simps1_simps2",
+         "house":"",
+         "parents":[
+            "simps1",
+            "simps2"
+         ],
+         "children":[
+            "simps5",
+            "simps6"
+         ]
+      },
+      {
+         "key":"simps1_simps3",
+         "house":"",
+         "parents":[
+            "simps1",
+            "simps3"
+         ],
+         "children":[
+            "simps4"
+         ]
+      },
+      {
+         "key":"simps6_simps7",
+         "house":"",
+         "parents":[
+            "simps6",
+            "simps7"
+         ],
+         "children":[
+            "simps8",
+            "simps9",
+            "simps10"
+         ]
+      }
+   ],
+   "people":{
+      "simps1":{
+         "name":"Abraham",
+         "fullname":"Simpson Abraham J.",
+         "born":"",
+         "died":""
+      },
+      "simps2":{
+         "name":"Mona",
+         "fullname":"Simpson Mona",
+         "born":"",
+         "died":""
+      },
+      "simps3":{
+         "name":"Gaby",
+         "fullname":"Gaby",
+         "born":"",
+         "died":""
+      },
+      "simps4":{
+         "name":"Herbert",
+         "fullname":"Powell (adopted) Herbert",
+         "born":"",
+         "died":""
+      },
+      "simps5":{
+         "name":"Amber",
+         "fullname":"Simpson Amber",
+         "born":"",
+         "died":""
+      },
+      "simps6":{
+         "name":"Homer",
+         "fullname":"Simpson Homer Jay",
+         "born":"",
+         "died":""
+      },
+      "simps7":{
+         "name":"Marjorie",
+         "fullname":"Bouvier Marjorie Jacqueline",
+         "born":"",
+         "died":""
+      },
+      "simps8":{
+         "name":"Bartholomew",
+         "fullname":"Simpson Bartholomew Jo-Jo",
+         "born":"",
+         "died":""
+      },
+      "simps9":{
+         "name":"Lisa",
+         "fullname":"Simpson Lisa Marie",
+         "born":"",
+         "died":""
+      },
+      "simps10":{
+         "name":"Margaret",
+         "fullname":"Simpson Margaret Evelyn",
+         "born":"",
+         "died":""
+      }
+   }
+}
