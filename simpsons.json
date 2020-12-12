@@ -1,15 +1,69 @@
 {
    "families":[
       {
-         "key":"simps1_simps2",
+         "key":"hus1_simps10",
          "house":"",
          "parents":[
-            "simps1",
-            "simps2"
+            "hus1",
+            "simps10"
          ],
          "children":[
-            "simps5",
-            "simps6"
+            "hus1child"
+         ]
+      },
+      {
+         "key":"hus2_simps10",
+         "house":"",
+         "parents":[
+            "hus2",
+            "simps10"
+         ],
+         "children":[
+            "hus2child"
+         ]
+      },
+      {
+         "key":"simps8_maria",
+         "house":"",
+         "parents":[
+            "simps8",
+            "maria"
+         ],
+         "children":[
+            "maria-child"
+         ]
+      },
+      {
+         "key":"simps8_jessica",
+         "house":"",
+         "parents":[
+            "simps8",
+            "jessica"
+         ],
+         "children":[
+            "jessica-child"
+         ]
+      },
+      {
+         "key":"simps8_jenny",
+         "house":"",
+         "parents":[
+            "simps8",
+            "jenny"
+         ],
+         "children":[
+            "jenny-child"
+         ]
+      },
+      {
+         "key":"milhouse_simps9",
+         "house":"",
+         "parents":[
+            "milhouse",
+            "simps9"
+         ],
+         "children":[
+            "simps12"
          ]
       },
       {
@@ -31,9 +85,21 @@
             "simps7"
          ],
          "children":[
+            "simps10",
             "simps8",
-            "simps9",
-            "simps10"
+            "simps9"
+         ]
+      },
+      {
+         "key":"simps1_simps2",
+         "house":"",
+         "parents":[
+            "simps1",
+            "simps2"
+         ],
+         "children":[
+            "simps5",
+            "simps6"
          ]
       }
    ],
@@ -95,6 +161,84 @@
       "simps10":{
          "name":"Margaret",
          "fullname":"Simpson Margaret Evelyn",
+         "born":"",
+         "died":""
+      },
+      "milhouse":{
+         "name":"Millhouse",
+         "fullname":"Millhouse",
+         "born":"",
+         "died":"",
+         "class": "other"
+      },
+      "maria":{
+         "name":"Maria",
+         "fullname":"Maria Connor",
+         "born":"",
+         "died":"",
+         "class": "other"
+      },
+      "jessica":{
+         "name":"Jessica",
+         "fullname":"Jessica Soprano",
+         "born":"",
+         "died":"",
+         "class": "other"
+      },
+      "jenny":{
+         "name":"Jenny",
+         "fullname":"Jenny Threeleven",
+         "born":"",
+         "died":"",
+         "class": "other"
+      },
+      "simps12":{
+         "name":"Tommy",
+         "fullname":"Tommy",
+         "born":"",
+         "died":""
+      },
+      "hus1":{
+         "name":"Tom",
+         "fullname":"Tom",
+         "born":"",
+         "died":"",
+         "class": "other"
+      },
+      "hus2":{
+         "name":"Jerry",
+         "fullname":"Jerry",
+         "born":"",
+         "died":"",
+         "class": "other"
+      },
+      "hus1child":{
+         "name":"Child 1",
+         "fullname":"",
+         "born":"",
+         "died":""
+      },
+      "hus2child":{
+         "name":"Child 2",
+         "fullname":"",
+         "born":"",
+         "died":""
+      },
+      "maria-child":{
+         "name":"Child 1",
+         "fullname":"",
+         "born":"",
+         "died":""
+      },
+      "jessica-child":{
+         "name":"Child 2",
+         "fullname":"",
+         "born":"",
+         "died":""
+      },
+      "jenny-child":{
+         "name":"Child 2",
+         "fullname":"",
          "born":"",
          "died":""
       }
