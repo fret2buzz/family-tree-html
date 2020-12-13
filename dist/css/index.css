@@ -66,6 +66,22 @@ body {
       height: 50%; }
     .flow-dendrogram li:only-child:before {
       display: none; }
+    .flow-dendrogram li.parent2 {
+      padding-top: 0.65rem !important; }
+    .flow-dendrogram li.parent2 > .line {
+      border-left: 4px dashed var(--stroke-color, #000);
+      content: '';
+      height: 50%;
+      left: 9.5rem;
+      position: absolute;
+      top: -0.5rem;
+      bottom: auto; }
+    .flow-dendrogram li.parent2::after {
+      display: none; }
+    .flow-dendrogram li.m-last::before {
+      height: 50%; }
+    .flow-dendrogram li.m-last ~ .parent2::before {
+      display: none; }
   .flow-dendrogram > li {
     padding-top: 0;
     padding-bottom: 0;
@@ -90,21 +106,6 @@ body {
   left: 9.5rem;
   position: absolute;
   bottom: 0; }
-
-.parent2 {
-  padding-top: 0.65rem !important; }
-
-.parent2 > .line {
-  border-left: 4px dashed var(--stroke-color, #000);
-  content: '';
-  height: 50%;
-  left: 9.5rem;
-  position: absolute;
-  top: -0.5rem;
-  bottom: auto; }
-
-.parent2::after {
-  display: none; }
 
 .parents {
   position: relative; }

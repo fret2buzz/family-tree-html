@@ -1,6 +1,7 @@
 const fs = require('fs');
 const jsonFolder = './src/json/';
 const csvFolder = './src/csv/';
+const distFolder = './dist/';
 const cheerio = require('cheerio');
 const csv2json = require('csvtojson/v2');
 
@@ -20,8 +21,7 @@ Colors.random = function() {
     return this.names[Math.floor(Math.random() * this.names.length)];
 };
 
-const RUN = async (filename) => {
-    let family = await csv2json().fromFile(csvFolder + filename + '.csv');
+function html(filename) {
     const $ = cheerio.load(`
         <!DOCTYPE html>
         <html lang="en">
@@ -52,57 +52,6 @@ const RUN = async (filename) => {
             $childrenCont.append($childCont);
         });
     };
-
-    let parents = [];
-    let people = {};
-
-    for (let i = 0; i < family.length; i++) {
-        let member = family[i];
-        let name = member['First Name'];
-        let born = member['Born'];
-        let died = member['Died'];
-        let id = member['Id'];
-        let fullname = member['Full Birthname'];
-        let house = member['House'];
-        let idFather = member['Father Id'];
-        let idMother = member['Mother Id'];
-        let parentsKey = `${idFather}_${idMother}`;
-        let classname = member['Class'];
-
-        let couple = parents.find(i => i.key === parentsKey);
-        let parentArr = [];
-
-        if (idFather !== '') {
-            parentArr.push(idFather);
-        }
-        if (idMother !== '') {
-            parentArr.push(idMother);
-        }
-
-        if (couple) {
-            couple.children.push(id);
-        } else {
-            if (idFather || idMother) {
-                parents.push({
-                    key: parentsKey,
-                    parents: parentArr,
-                    children: [id]
-                });
-            }
-        }
-
-        people[id] = {
-            name: name,
-            fullname: fullname,
-            born: born,
-            died: died,
-            classname: classname,
-            house: house
-        };
-    }
-
-    let data = { families: parents, people: people };
-    fs.writeFileSync(jsonFolder + filename + '.json', JSON.stringify(data), 'utf8');
 
     for (const name in data.people) {
         // console.log(`${name}: ${data.people[name]}`);
@@ -188,23 +137,88 @@ const RUN = async (filename) => {
         }
     });
 
+    // the case when wife has second husband and it is the last child of the group
+    $('ul').each(function(index) {
+        let $list = $(this).find('> li:not(.parent2)');
+        let length = $list.length;
+        if (length > 1) {
+            $list.eq($list.length - 1).addClass('m-last');
+        }
+    });
+
     const html = $.html().replace(/^\s*[\r\n]/gm,"");
 
-    fs.writeFile('./dist/' + filename + '.html', html, {encoding: 'utf8'}, function(err) {
+    fs.writeFile(distFolder + filename + '.html', html, {encoding: 'utf8'}, function(err) {
         if (err) {
             return console.log(err);
         }
         console.log('HTML file ' + filename + ' was saved!');
     });
+};
+
+const run = async (filename) => {
+    let family = await csv2json().fromFile(csvFolder + filename + '.csv');
+
+    let parents = [];
+    let people = {};
+
+    for (let i = 0; i < family.length; i++) {
+        let member = family[i];
+        let name = member['First Name'];
+        let born = member['Born'];
+        let died = member['Died'];
+        let id = member['Id'];
+        let fullname = member['Full Birthname'];
+        let house = member['House'];
+        let idFather = member['Father Id'];
+        let idMother = member['Mother Id'];
+        let parentsKey = `${idFather}_${idMother}`;
+        let classname = member['Class'];
+
+        let couple = parents.find(i => i.key === parentsKey);
+        let parentArr = [];
+
+        if (idFather !== '') {
+            parentArr.push(idFather);
+        }
+        if (idMother !== '') {
+            parentArr.push(idMother);
+        }
+
+        if (couple) {
+            couple.children.push(id);
+        } else {
+            if (idFather || idMother) {
+                parents.push({
+                    key: parentsKey,
+                    parents: parentArr,
+                    children: [id]
+                });
+            }
+        }
+
+        people[id] = {
+            name: name,
+            fullname: fullname,
+            born: born,
+            died: died,
+            classname: classname,
+            house: house
+        };
+    }
+
+    data = { families: parents, people: people };
+    fs.writeFileSync(jsonFolder + filename + '.json', JSON.stringify(data), 'utf8');
 
     return;
 };
 
 fs.readdirSync(csvFolder).sort().forEach(function(file, index) {
     var filename = file.split('.')[0];
-
-    RUN(filename).then(() => {
+    var data = {};
+    run(filename).then(() => {
         console.log('Done');
+        html(filename);
     }).catch (err => {
         console.error(err.stack || err);
     });
