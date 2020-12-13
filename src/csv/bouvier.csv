@@ -1,0 +1,21 @@
+num,First Name,Last Name,Middle Name,Full Birthname,Born,Died,House,Parents,Father Id,Mother Id,Id
+1,Pepe,Bouvier,,Bouvier Pepe,,,, & ,,,b0
+3,Clancy,Bouvier,,Bouvier Clancy,,,,b0 & ,b0,,b2
+4,Jacqueline,Bouvier,,Bouvier Jacqueline,,,,b1 & ,b1,,b3
+5,Selma,Bouvier,,Bouvier Selma,,,,b2 & b3,b2,b3,b4
+6,Patty,Bouvier,,Bouvier Patty,,,,b2 & b3,b2,b3,b5
+7,Homer,Simpson,Jay,Simpson Homer Jay,,,simpsons,simps1 & simps2,simps1,simps2,simps6
+8,Marjorie,Bouvier,Jacqueline,Bouvier Marjorie Jacqueline,,,,b2 & b3,b2,b3,simps7
+9,Bartholomew,Simpson,Jo-Jo,Simpson Bartholomew Jo-Jo,,,,simps6 & simps7,simps6,simps7,simps8
+10,Lisa,Simpson,Marie,Simpson Lisa Marie,,,,simps6 & simps7,simps6,simps7,simps9
+11,Margaret,Simpson,Evelyn,Simpson Margaret Evelyn,,,,simps6 & simps7,simps6,simps7,simps10
+12,Maria,Connor,J.,Connor Maria J.,,,, & ,,,connor
+13,Jenny,Soprano,A.,Soprano Jenny A.,,,, & ,,,soprano
+14,William,Simpson,John,Simpson William John,,,,simps8 & soprano,simps8,soprano,will
+15,Tom,Cat,,Cat Tom,,,, & ,,,tom
+16,Jerry,Mouse,,Mouse Jerry,,,, & ,,,jerry
+17,Jason,Mouse,Richard,Mouse Jason Richard,,,,jerry & simps10,jerry,simps10,jason
+18,Richard,Cat,,Cat Richard,,,,tom & simps10,tom,simps10,rick
+19,Milhouse,Van Houten,,Van Houten Milhouse,,,, & ,,,milhouse
+20,Edward,Van Houten,,Van Houten Edward,,,,milhouse & simps9,milhouse,simps9,ed
+21,-,-,-,- - -,,,,simps8 & connor,simps8,connor,child

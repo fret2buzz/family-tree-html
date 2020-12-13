@@ -1,0 +1,21 @@
+num,First Name,Last Name,Middle Name,Full Birthname,Born,Died,House,Parents,Father Id,Mother Id,Id,Class
+1,Abraham,Simpson,J.,Simpson Abraham J.,,,, & ,,,simps1,
+2,Mona,Simpson,,Simpson Mona,,,, & ,,,simps2,
+3,Gaby,,,Gaby,,,, & ,,,simps3,
+4,Herbert,Powell (adopted),,Powell (adopted) Herbert,,,,simps1 & simps3,simps1,simps3,simps4,
+5,Amber,Simpson,,Simpson Amber,,,,simps1 & simps2,simps1,simps2,simps5,
+6,Homer,Simpson,Jay,Simpson Homer Jay,,,,simps1 & simps2,simps1,simps2,simps6,
+7,Marjorie,Bouvier,Jacqueline,Bouvier Marjorie Jacqueline,,,bouvier, & ,,,simps7,
+8,Bartholomew,Simpson,Jo-Jo,Simpson Bartholomew Jo-Jo,,,,simps6 & simps7,simps6,simps7,simps8,
+9,Lisa,Simpson,Marie,Simpson Lisa Marie,,,,simps6 & simps7,simps6,simps7,simps9,
+10,Margaret,Simpson,Evelyn,Simpson Margaret Evelyn,,,,simps6 & simps7,simps6,simps7,simps10,
+11,Maria,Connor,J.,Connor Maria J.,,,, & ,,,connor,other
+12,Jenny,Soprano,A.,Soprano Jenny A.,,,, & ,,,soprano,other
+13,William,Simpson,John,Simpson William John,,,,simps8 & soprano,simps8,soprano,will,
+14,Tom,Cat,,Cat Tom,,,, & ,,,tom,other
+15,Jerry,Mouse,,Mouse Jerry,,,, & ,,,jerry,other
+16,Jason,Mouse,Richard,Mouse Jason Richard,,,,jerry & simps10,jerry,simps10,jason,
+17,Richard,Cat,,Cat Richard,,,,tom & simps10,tom,simps10,rick,
+18,Milhouse,Van Houten,,Van Houten Milhouse,,,, & ,,,milhouse,other
+19,Edward,Van Houten,,Van Houten Edward,,,,milhouse & simps9,milhouse,simps9,ed,
+20,-,-,-,- - -,,,,simps8 & connor,simps8,connor,child,
