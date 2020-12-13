@@ -21,7 +21,7 @@ Colors.random = function() {
     return this.names[Math.floor(Math.random() * this.names.length)];
 };
 
-function html(filename) {
+function html(filename, data) {
     const $ = cheerio.load(`
         <!DOCTYPE html>
         <html lang="en">
@@ -146,14 +146,7 @@ function html(filename) {
         }
     });
 
-    const html = $.html().replace(/^\s*[\r\n]/gm,"");
-
-    fs.writeFile(distFolder + filename + '.html', html, {encoding: 'utf8'}, function(err) {
-        if (err) {
-            return console.log(err);
-        }
-        console.log('HTML file ' + filename + ' was saved!');
-    });
+    return $.html().replace(/^\s*[\r\n]/gm,"");
 };
 
 const run = async (filename) => {
@@ -207,18 +200,24 @@ const run = async (filename) => {
         };
     }
 
-    data = { families: parents, people: people };
+    let data = { families: parents, people: people };
     fs.writeFileSync(jsonFolder + filename + '.json', JSON.stringify(data), 'utf8');
 
+    let htmlCode = await html(filename, data);
+    fs.writeFile(distFolder + filename + '.html', htmlCode, {encoding: 'utf8'}, function(err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log('HTML file ' + filename + ' was saved!');
+    });
     return;
 };
 
 fs.readdirSync(csvFolder).sort().forEach(function(file, index) {
     var filename = file.split('.')[0];
-    var data = {};
+
     run(filename).then(() => {
         console.log('Done');
-        html(filename);
     }).catch (err => {
         console.error(err.stack || err);
     });
