@@ -34,6 +34,7 @@ const RUN = async (filename) => {
                 <script src="js/main.js"></script>
             </head>
             <body>
+                <h1>${filename}</h1>
                 <div class="viewport">
                     <div class="content" id="app"></div>
                 </div>
@@ -201,6 +202,7 @@ const RUN = async (filename) => {
 
 fs.readdirSync(csvFolder).sort().forEach(function(file, index) {
     var filename = file.split('.')[0];
+
     RUN(filename).then(() => {
         console.log('Done');
     }).catch (err => {
