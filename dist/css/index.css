@@ -78,8 +78,6 @@ body {
       bottom: auto; }
     .flow-dendrogram li.parent2::after {
       display: none; }
-    .flow-dendrogram li.m-last::before {
-      height: 50%; }
     .flow-dendrogram li.m-last ~ .parent2::before {
       display: none; }
   .flow-dendrogram > li {
@@ -102,7 +100,7 @@ body {
 .line {
   border-left: 4px dashed var(--stroke-color, #000);
   content: '';
-  height: 70%;
+  height: 50%;
   left: 9.5rem;
   position: absolute;
   bottom: 0; }
@@ -156,7 +154,7 @@ body {
 .viewport {
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  overflow: auto;
   background: #fafafa; }
 
 .other {

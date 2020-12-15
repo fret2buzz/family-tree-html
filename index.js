@@ -112,6 +112,7 @@ function html(filename, data) {
         } else {
             let line = '<span class="line"></span>';
             $mother.addClass('parent2').append(line);
+            $father.append(line);
             $father.after($mother);
 
             if (el.children) {
