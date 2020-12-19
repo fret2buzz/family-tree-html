@@ -9,7 +9,7 @@ body {
   outline: none;
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin: 2rem 0 0;
   padding: 0;
   list-style: none;
   text-align: center; }
@@ -21,6 +21,8 @@ body {
     margin: 0;
     padding: 0;
     list-style: none; }
+  .flow-dendrogram:first-child {
+    margin-top: 0; }
   .flow-dendrogram ul {
     display: flex;
     flex-direction: column;

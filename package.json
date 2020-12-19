@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx live-server",
-    "watch": "npx node-sass src/scss/index.scss dist/css/index.css -w"
+    "watch": "npx node-sass src/scss/index.scss dist/css/index.css -w",
+    "css": "npx node-sass src/scss/index.scss dist/css/index.css"
   },
   "author": "",
   "license": "ISC",
